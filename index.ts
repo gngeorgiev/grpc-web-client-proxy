@@ -28,7 +28,7 @@ export type PromiseClientProxy<T extends Client> = {
     ) => Promise<CallbackArgumentType<T[P]>>
 };
 
-export function PromisifyClient<TClient extends Client>(
+export function promisify<TClient extends Client>(
     client: TClient
 ): PromiseClientProxy<TClient> {
     //we don't really care about type safety here
