@@ -12,7 +12,9 @@ export interface Client {
     serviceHost: string;
 }
 
-type FirstArgumentType<T> = T extends (arg: infer U) => any ? U : any;
+type FirstArgumentType<T> = T extends (arg: infer U, ...args: any[]) => any
+    ? U
+    : any;
 
 type CallbackArgumentType<T> = T extends (
     _: any,
